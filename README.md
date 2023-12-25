@@ -67,3 +67,20 @@ sudo pacman -Qtdq | pacman -Rns -
 `echo epb | tee /sys/devices/system/cpu/cpu*/power/energy_perf_bias`
 
 
+## Control Fan Speed
+
+### Enable kernel driver option:
+
+`echo 'options thinkpad_acpi fan_control=1' | sudo tee -a /etc/modprobe.d/thinkpad_acpi.conf`
+
+### Check success:
+
+`cat /proc/acpi/ibm/fan`
+
+### Set levels
+
+
+`echo 'level 4' | sudo tee /proc/acpi/ibm/fan`
+`echo 'level auto' | sudo tee /proc/acpi/ibm/fan`
+
+

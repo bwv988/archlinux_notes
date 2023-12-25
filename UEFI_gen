@@ -1,0 +1,5 @@
+#!/bin/bash
+efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Arch-Linux-Fallback" --loader /vmlinuz-linux --unicode 'root=UUID=ccd2e157-0143-408a-af39-feb6214937a4 resume=UUID=011c4fbc-2d70-4554-be95-d203710ee6b8 rw initrd=\initramfs-linux-fallback.img'
+efibootmgr --disk /dev/nvme0n1 --part 1 --create --label "Arch-Linux" --loader /vmlinuz-linux --unicode 'root=UUID=ccd2e157-0143-408a-af39-feb6214937a4 resume=UUID=011c4fbc-2d70-4554-be95-d203710ee6b8 rw initrd=\intel-ucode.img initrd=\initramfs-linux.img'
+exit 0
+# See man efibootmgr
