@@ -1,5 +1,7 @@
 # Arch Linux installation notes
 
+Some random notes I am taking while installing / maintaining Arch Linux on a Lenovo T14s.
+
 ## Basic setup steps
 
 ### Partitioning
@@ -8,8 +10,7 @@ It's just horribly painful.
 
 ### UEFI
 
-Boot directly into the kernel, no GRUB etc.
-
+Boot directly into the kernel, no GRUB etc. Took a while to remove the Windows bootloader and recovery partitions, too.
 
 ### Dropbox
 
@@ -50,6 +51,15 @@ sudo pacman -Suy
 
 ```
 sudo pacman -Qtdq | pacman -Rns -
+```
+
+## AUR packages
+
+This is simple. Just `git clone` the AUR package, then `cd` into the directory and run:
+
+```
+makepkg
+sudo pacman -U <package file>
 ```
 
 ## CPU Frequency scaling
