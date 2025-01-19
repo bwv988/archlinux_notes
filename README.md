@@ -93,4 +93,8 @@ sudo pacman -U <package file>
 `echo 'level 4' | sudo tee /proc/acpi/ibm/fan`
 `echo 'level auto' | sudo tee /proc/acpi/ibm/fan`
 
+## Set battery charging threshold 
 
+Below sets the charging threshold to 80%:
+
+`echo 80 | sudo tee  /sys/class/power_supply/BAT0/charge_control_end_threshold`
